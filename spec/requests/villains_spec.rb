@@ -41,7 +41,7 @@ describe "POST /create" do
     villain = Villain.first
     expect(villain.name).to eq 'Thanos'
   end
-end
+
 
 # describe "PATCH /update" do
 #   it "updates a villain" do
@@ -60,3 +60,130 @@ end
 #     expect { updated_villain.villain.update(villain_params(villain)) }.to change( updated_villain.hobbies, :updated_at)
 #   end
 # end
+
+  it "doesn't create a villain without a name" do
+    villain_params = {
+      villain: {
+        age: 92,
+        hobbies: 'Committing robberies. Impersonating other people.',
+        power: 'Shapeshifting.',
+        about: 'A mutant shapeshifter with the ability to molecularly shift the formation of her biological cells at will to change her appearance and thereby assume the form of other humans and animals.',
+        evil_scheme: 'Unknown.',
+        image: 'https://www.alexrossart.com/cdn/shop/products/Mystique_1024x1024.jpg?v=1675177841'
+    }
+  }
+  
+    post '/villains', params: villain_params
+    expect(response.status).to eq 422
+    json = JSON.parse(response.body)
+    expect(json['name']).to include "can't be blank"
+  end
+
+  it "doesn't create a villain without an age" do
+    villain_params = {
+      villain: {
+        name: 'Mystique',
+        hobbies: 'Committing robberies. Impersonating other people.',
+        power: 'Shapeshifting.',
+        about: 'A mutant shapeshifter with the ability to molecularly shift the formation of her biological cells at will to change her appearance and thereby assume the form of other humans and animals.',
+        evil_scheme: 'Unknown.',
+        image: 'https://www.alexrossart.com/cdn/shop/products/Mystique_1024x1024.jpg?v=1675177841'
+    }
+  }
+  
+    post '/villains', params: villain_params
+    expect(response.status).to eq 422
+    json = JSON.parse(response.body)
+    expect(json['name']).to include "can't be blank"
+  end
+
+  it "doesn't create a villain without a hobbies" do
+    villain_params = {
+      villain: {
+        name: 'Mystique',
+        age: 92,
+        power: 'Shapeshifting.',
+        about: 'A mutant shapeshifter with the ability to molecularly shift the formation of her biological cells at will to change her appearance and thereby assume the form of other humans and animals.',
+        evil_scheme: 'Unknown.',
+        image: 'https://www.alexrossart.com/cdn/shop/products/Mystique_1024x1024.jpg?v=1675177841'
+    }
+  }
+  
+    post '/villains', params: villain_params
+    expect(response.status).to eq 422
+    json = JSON.parse(response.body)
+    expect(json['name']).to include "can't be blank"
+  end
+
+  it "doesn't create a villain without a power" do
+    villain_params = {
+      villain: {
+        name: 'Mystique',
+        age: 92,
+        hobbies: 'Committing robberies. Impersonating other people.',
+        about: 'A mutant shapeshifter with the ability to molecularly shift the formation of her biological cells at will to change her appearance and thereby assume the form of other humans and animals.',
+        evil_scheme: 'Unknown.',
+        image: 'https://www.alexrossart.com/cdn/shop/products/Mystique_1024x1024.jpg?v=1675177841'
+    }
+  }
+  
+    post '/villains', params: villain_params
+    expect(response.status).to eq 422
+    json = JSON.parse(response.body)
+    expect(json['name']).to include "can't be blank"
+  end
+
+  it "doesn't create a villain without a about" do
+    villain_params = {
+      villain: {
+        name: 'Mystique',
+        age: 92,
+        hobbies: 'Committing robberies. Impersonating other people.',
+        power: 'Shapeshifting.',
+        evil_scheme: 'Unknown.',
+        image: 'https://www.alexrossart.com/cdn/shop/products/Mystique_1024x1024.jpg?v=1675177841'
+    }
+  }
+  
+    post '/villains', params: villain_params
+    expect(response.status).to eq 422
+    json = JSON.parse(response.body)
+    expect(json['name']).to include "can't be blank"
+  end
+
+  it "doesn't create a villain without an evil_scheme" do
+    villain_params = {
+      villain: {
+        name: 'Mystique',
+        age: 92,
+        hobbies: 'Committing robberies. Impersonating other people.',
+        power: 'Shapeshifting.',
+        about: 'A mutant shapeshifter with the ability to molecularly shift the formation of her biological cells at will to change her appearance and thereby assume the form of other humans and animals.',
+        image: 'https://www.alexrossart.com/cdn/shop/products/Mystique_1024x1024.jpg?v=1675177841'
+    }
+  }
+  
+    post '/villains', params: villain_params
+    expect(response.status).to eq 422
+    json = JSON.parse(response.body)
+    expect(json['name']).to include "can't be blank"
+  end
+
+  it "doesn't create a villain without a image" do
+    villain_params = {
+      villain: {
+        name: 'Mystique',
+        age: 92,
+        hobbies: 'Committing robberies. Impersonating other people.',
+        power: 'Shapeshifting.',
+        about: 'A mutant shapeshifter with the ability to molecularly shift the formation of her biological cells at will to change her appearance and thereby assume the form of other humans and animals.',
+        evil_scheme: 'Unknown.',
+    }
+  }
+  
+    post '/villains', params: villain_params
+    expect(response.status).to eq 422
+    json = JSON.parse(response.body)
+    expect(json['name']).to include "can't be blank"
+  end
+end

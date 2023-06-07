@@ -11,14 +11,6 @@ class VillainsController < ApplicationController
   end
   
   def update
-    # villain = Villain.find(params[:id])
-    # villain.update(villain_params)
-
-    # if villain.valid?
-    #     render json: villain
-    # else
-    #     render json: villain.errors
-    # end
   end
 
   def destroy

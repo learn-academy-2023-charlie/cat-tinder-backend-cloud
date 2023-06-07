@@ -42,25 +42,6 @@ describe "POST /create" do
     expect(villain.name).to eq 'Thanos'
   end
 
-
-# describe "PATCH /update" do
-#   it "updates a villain" do
-#     villain = Villain.create(
-#       name: 'Thanos',
-#       age: 49,
-#       hobbies: 'Meow Mix, and plenty of sunshine.',
-#       power: 'decimating the universe',
-#       about: 'has a snappy sense of style',
-#       evil_scheme: 'snap away his problems (and yours)',
-#       image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80'
-#     )  
-#     patch '/villains/1', params: villain_params
-#     expect(response).to have_http_status(200)
-#     updated_villain = Villain.first
-#     expect { updated_villain.villain.update(villain_params(villain)) }.to change( updated_villain.hobbies, :updated_at)
-#   end
-# end
-
   it "doesn't create a villain without a name" do
     villain_params = {
       villain: {

@@ -1,54 +1,19 @@
-# README
-
-Commented out code:
-app/controllers/villains_controller.rb
-Update and destroy endpoints not complete
-    # villain = Villain.find(params[:id])
-    # villain.update(villain_params)
-
-    # if villain.valid?
-    #     render json: villain
-    # else
-    #     render json: villain.errors
-    # end
-
-app/spec/requests/villains_spec.rb
-Update and destroy endpoints not complete
-# describe "PATCH /update" do
-#   it "updates a villain" do
-#     villain = Villain.create(
-#       name: 'Thanos',
-#       age: 49,
-#       hobbies: 'Meow Mix, and plenty of sunshine.',
-#       power: 'decimating the universe',
-#       about: 'has a snappy sense of style',
-#       evil_scheme: 'snap away his problems (and yours)',
-#       image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80'
-#     )  
-#     patch '/villains/1', params: villain_params
-#     expect(response).to have_http_status(200)
-#     updated_villain = Villain.first
-#     expect { updated_villain.villain.update(villain_params(villain)) }.to change( updated_villain.hobbies, :updated_at)
-#   end
-# end
+# Villain Tinder 
+![Static Badge](https://img.shields.io/badge/stack-ruby%20on%20rails-darkred) ![Static Badge](https://img.shields.io/badge/UI-react-steelblue) ![Static Badge](https://img.shields.io/badge/testing-rspec%2Fjs%20unit-darkgreen) ![Static Badge](https://img.shields.io/badge/db-activerecord-midnightblue)
 
 
-Things you may want to cover:
+Vance Apostol and Sarah Cherry created 'Villain Tinder' as team Cloud during LEARN Academy's 4 month full stack software development bootcamp. The stack used for this is Ruby on Rails, RSpec testing, and React with JSX, using ActiveRecord for database management. This was our first independent full stack app, and will have full CRUD functionality. 
 
-* Ruby version
+This repo contains the backend - Ruby on Rails with RSpec testing. Find the frontend repo [here](https://github.com/learn-academy-2023-charlie/cat-tinder-frontend-cloud/blob/main/README.md)
 
-* System dependencies
+## Motivation
+Villain Tinder was largely created as a process of learning.
 
-* Configuration
+## Requirements
+ - yarn
+ - React
+ - Ruby on rails
+ - ActiveRecord
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Reference
++ [LEARN syllabus, Cat Tinder project](https://github.com/learn-academy-2023-charlie/syllabus#unit-eight-cat-tinder-combining-react-and-rails)

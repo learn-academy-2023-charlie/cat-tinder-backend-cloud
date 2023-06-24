@@ -15,5 +15,21 @@ Villain Tinder was largely created as a process of learning.
  - Ruby on rails
  - ActiveRecord
 
+## Configuration
+
+```
+  $ git clone https://github.com/learn-academy-2023-charlie/cat-tinder-frontend-cloud.git
+  $ cd cat-tinder-frontend-cloud
+  $ yarn start
+
+  - New terminal window
+  $ git clone https://github.com/learn-academy-2023-charlie/cat-tinder-backend-cloud.git
+  $ cd cat-tinder-backend-cloud
+  $ rails s
+  
+  Open localhost:3000
+  Open localhost:3001
+```
+
 ## Reference
 + [LEARN syllabus, Cat Tinder project](https://github.com/learn-academy-2023-charlie/syllabus#unit-eight-cat-tinder-combining-react-and-rails)
